@@ -1,0 +1,16 @@
+{
+    "/claimbroadcasthub": {
+      "target": "https://localhost:7273",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug",
+      "ws": true
+    },
+    "/api":{
+      "target": "https://localhost:7273",
+      "secure": false,
+      "changeOrigin": true,
+      "logLevel": "debug"
+    }
+  }
+  
