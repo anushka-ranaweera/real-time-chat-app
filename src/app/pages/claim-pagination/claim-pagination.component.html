@@ -1,0 +1,55 @@
+<h2 style="text-align: center">Active Claims</h2>
+<div
+  style="
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+  "
+>
+  @for (claim of claims(); track claim.claimId) {
+  <div style="width: 200px; padding: 20px; border: solid 1px black">
+    <p>Claim Number: {{ claim.claimNumber }}</p>
+    <p>
+      {{ claim.contactName }}
+    </p>
+    <p>
+      {{ claim.vehicleInfo == null ? claim.contactDetail : claim.vehicleInfo }}
+    </p>
+    <p>
+      {{ claim.recordDate | date : "dd/MM/yyyy H:mm" }}
+    </p>
+  </div>
+  }
+</div>
+<br />
+<div
+  style="
+    width: 45%;
+    margin: 0 10px;
+    text-align: center;
+    border: black 2px solid;
+    border-radius: 10px;
+  "
+>
+  <button (click)="requestClaim()">Request</button>
+
+  @if (needsLogin){
+  <div class="overlay">
+    <div
+      class="overlay-inner"
+      style="display: flex; flex-direction: column; gap: 10px; padding: 20px"
+    >
+      <h3>Login</h3>
+      <input type="text" [(ngModel)]="loginUser.email" placeholder="Username" />
+      <input
+        [(ngModel)]="loginUser.password"
+        type="password"
+        placeholder="Password"
+      />
+      <button (click)="Login(loginUser)">Login</button>
+    </div>
+  </div>
+  }
+</div>

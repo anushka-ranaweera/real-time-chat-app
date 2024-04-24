@@ -1,0 +1,10 @@
+export enum ClaimFilterType {
+  ALL = 1,
+  CLAIM = 2,
+  MISCELLANEOUS = 3,
+}
+
+export enum PaginationOrderBy {
+  ASCENDING = 1,
+  DESCENDING = 2,
+}
